@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        #progress-container {
+            width: 100%;
+            background-color: grey;
+
+        }
+
+        #progress {
+            width: 1%;
+            height: 10px;
+            background-color: blue
+        }
+    </style>
+</head>
+<body>
+    <h1>This is my progress bar</h1>
+    <div id='progress-container'>
+        <div id='progress'></div>
+    </div>
+    <button onclick="progress()">Click to Start</button>
+    <script>
+        function progress() {
+            let bar =  document.getElementById('progress');
+            let width = 1;
+            let id = setInterval( frame, 100);
+
+            function frame (){
+                if (width >=100){
+                    clearInterval(id);
+                } else {
+                    width++;
+                    bar.style.width = width+'%';
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
